@@ -1,5 +1,5 @@
-streamlit
-opencv-python
-mediapipe==0.10.21
-numpy
-pandas
+streamlit>=1.50.0
+opencv-python>=4.8.0
+mediapipe>=0.10.0
+numpy<2.0.0
+protobuf<4.0.0
