@@ -1,4 +1,4 @@
-from numpy.lib.function_base import angle
+from numpy import angle
 import time
 import numpy as np
 import cv2
@@ -10,6 +10,7 @@ import sys
 import pygame
 import random
 
+angle=np.angle
 def play_dinosaur_game():
     # Init Webcam    
     wCam, hCam = 1280, 720
@@ -343,7 +344,10 @@ def play_dinosaur_game():
         pygame.display.update()
         clock.tick(120)
 
-
+        # cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
+        # cv2.resizeWindow("Image", 640, 480)  # Set desired size
+        cv2.moveWindow("Image", 0, 0)        # top-left
+        # pygame window will be somewhere else
         cv2.imshow("Image", img)
         # key = cv2.waitKey(1)
         # if key == ord("q"):
@@ -462,3 +466,5 @@ def game_over_display(screen, game_over_font, game_over_button, first_game):
 
         button_rect = game_over_button.get_rect(center = (600, 150))
         screen.blit(game_over_button, button_rect)
+if __name__ == "__main__":
+    play_dinosaur_game()

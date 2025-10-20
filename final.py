@@ -77,7 +77,9 @@ def launch_game_script(script_relpath):
     Launch a Python script as a new process. script_relpath is relative to project root.
     Returns the subprocess.Popen object or None.
     """
-    script_path = os.path.join(os.getcwd(), script_relpath)
+    # Get the directory of the current Streamlit script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_path = os.path.join(script_dir, script_relpath)
     if not os.path.exists(script_path):
         st.error(f"Game script not found: {script_path}")
         return None
@@ -227,12 +229,12 @@ elif st.session_state.page == "fitness_games_page":
     col1, col2, col3 = st.columns([3, 3, 2])
     with col1:
         if st.button("🦕 Dinosaur(Dino) game"):
-            proc = launch_game_script("Dinosaur_and_flappybird_fitness_games/run_dino.py")
+            proc = launch_game_script("Dinosaur_and_flappybird_fitness_games/DinosaurGame.py")
             if proc:
                 st.success("Dinosaur launched (check new window).")
     with col2:
         if st.button("🐦Flappy Bird"):
-            proc = launch_game_script("Dinosaur_and_flappybird_fitness_games/run_flappy.py")
+            proc = launch_game_script("Dinosaur_and_flappybird_fitness_games/FlappyBird.py")
             if proc:
                 st.success("Flappy Bird launched (check new window).")         
     with col3:
@@ -285,6 +287,7 @@ elif st.session_state.page == "select":
     col1, col2 = st.columns(2)
     with col1:
         if st.button("Start Exercise"):
+            st.session_state.manual_workout_done = False
             go_to("workout")
     with col2:
         if st.button("Back"):
