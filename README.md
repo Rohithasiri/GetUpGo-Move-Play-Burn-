@@ -65,14 +65,7 @@ Screenshots of the project<br>
 <img src="https://github.com/AAC-Open-Source-Pool/25AACR06/blob/main/preview%20images/1.png">
 <img src="https://github.com/AAC-Open-Source-Pool/25AACR06/blob/main/preview%20images/2.png">
 
-## Team details
-<b>Team Number:</b> <p>AACR06</p>
-<b>Senior Mentor:</b> <p>Meghana</p>
-<b>Junior Mentor:</b> <p>Vishal</p>
-<b>Team Member 1:</b> <p>Saketh</p>
-<b>Team Member 2:</b> <p>Maithri</p>
-<b>Team Member 2:</b> <p>Rohitha</p>
-<b>Team Member 2:</b> <p>Sai Varun</p>
+
 
 ## Contribution 
 **This section provides instructions and details on how to submit a contribution via a pull request. It is important to follow these guidelines to make sure your pull request is accepted.**
